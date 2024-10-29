@@ -27,7 +27,7 @@ const Login: React.FC<LoginProps> = ({ setUser }) => {
     };
 
     return (
-        <Box display="flex" flexDirection="column" minHeight="100vh" bgcolor="#f0f2f5">
+        <Box display="flex" flexDirection="column" minHeight="95vh" bgcolor="#f0f2f5">
             {/* left content */}
             <Box display="flex" flex={1}>
                 <Box
@@ -39,14 +39,23 @@ const Login: React.FC<LoginProps> = ({ setUser }) => {
                     bgcolor="#f5f5f5"
                     padding="2rem"
                 >
-                <img
-                    src="https://reborn.dev.aplog.co.id/content/img/reborn-Potrait.svg"
-                    alt="Sitek Logo"
-                    style={{ width: '80%', maxWidth: '700px', marginBottom: '2rem' }}
-                />
-            </Box>
+                    <svg
+                        width="80%"
+                        height="auto"
+                        viewBox="0 0 200 200"
+                        xmlns="http://www.w3.org/2000/svg"
+                        style={{maxWidth: '700px', marginBottom: '2rem'}}
+                    >
+                        <path d="M100 10 L90 60 L70 80 L130 80 L110 60 L100 10 Z" fill="gray"/>
+                        <path d="M70 85 L30 120 L40 125 L75 90 Z" fill="gray"/>
+                        <path d="M130 85 L170 120 L160 125 L125 90 Z" fill="gray"/>
+                        <path d="M90 65 L85 100 L115 100 L110 65 Z" fill="gray"/>
+                        <text x="50%" y="130" text-anchor="middle" fontWeight="bold" font-size="24" fill="black">ICS</text>
+                        <text x="50%" y="136" text-anchor="middle" font-size="4" fill="black">Integrate Cargo System</text>
+                    </svg>
+                </Box>
 
-            {/* right content */}
+                {/* right content */}
                 <Box
                     flex={1}
                     display="flex"
@@ -54,11 +63,12 @@ const Login: React.FC<LoginProps> = ({ setUser }) => {
                     alignItems="center"
                     padding="2rem"
                 >
-                    <Paper elevation={3} style={{ padding: '2rem', width: '100%', maxWidth: '400px', borderRadius: '8px' }}>
-                        <Typography variant="h4" gutterBottom style={{ textAlign: 'left' }}>
+                    <Paper elevation={3}
+                           style={{padding: '2rem', width: '100%', maxWidth: '400px', borderRadius: '8px'}}>
+                        <Typography variant="h4" gutterBottom style={{textAlign: 'left'}}>
                             Login
                         </Typography>
-                        {error && <Typography color="error" style={{ marginBottom: '1rem' }}>{error}</Typography>}
+                        {error && <Typography color="error" style={{marginBottom: '1rem'}}>{error}</Typography>}
                         <form onSubmit={handleLogin}>
                             <TextField
                                 label="Username"
