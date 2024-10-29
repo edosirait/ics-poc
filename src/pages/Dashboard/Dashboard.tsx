@@ -11,7 +11,7 @@ const Dashboard: React.FC = () => {
     useEffect(() => {
         const timer = setTimeout(() => {
             setLoading(false);
-        }, 3000);
+        }, 700);
 
         return () => clearTimeout(timer);
     }, []);

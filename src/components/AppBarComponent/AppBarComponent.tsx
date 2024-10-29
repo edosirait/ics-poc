@@ -1,7 +1,6 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography, IconButton, Menu, MenuItem, ListSubheader, Divider, Box } from '@mui/material';
-import { AccountCircle, Flight as FlightIcon, Settings, Logout } from '@mui/icons-material';
-import { useNavigate } from 'react-router-dom';
+import { AppBar, Toolbar, Typography, IconButton, Menu, MenuItem, Divider, Box } from '@mui/material';
+import { AccountCircle, Settings, Logout } from '@mui/icons-material';
 
 interface AppBarProps {
     user: any;
@@ -10,26 +9,12 @@ interface AppBarProps {
 
 const AppBarComponent: React.FC<AppBarProps> = ({ user, handleLogout }) => {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-    const [transactionAnchorEl, setTransactionAnchorEl] = React.useState<null | HTMLElement>(null);
-    const navigate = useNavigate();
-
     const handleMenuClick = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorEl(event.currentTarget);
     };
 
-    const handleTransactionMenuClick = (event: React.MouseEvent<HTMLElement>) => {
-        setTransactionAnchorEl(event.currentTarget);
-    };
-
     const handleMenuClose = () => {
         setAnchorEl(null);
-    };
-
-    const handleTransactionMenuClose = (path?: string) => {
-        setTransactionAnchorEl(null);
-        if (path) {
-            navigate(path);
-        }
     };
 
     return (
@@ -47,51 +32,6 @@ const AppBarComponent: React.FC<AppBarProps> = ({ user, handleLogout }) => {
                 <Typography variant="h6" style={{ flexGrow: 1, color: 'black', fontWeight: 'bold' }}>
                     SITEK Reborn Dummy
                 </Typography>
-
-                <IconButton style={{ color: '#000000'}} onClick={handleTransactionMenuClick}>
-                    <FlightIcon style={{ marginRight: '8px' }} />
-                    <Typography variant="subtitle1" color="inherit" style={{ marginRight: '8px' }}>
-                        Transaction
-                    </Typography>
-                </IconButton>
-                <Menu
-                    anchorEl={transactionAnchorEl}
-                    open={Boolean(transactionAnchorEl)}
-                    onClose={() => handleTransactionMenuClose('')}
-                    anchorOrigin={{
-                        vertical: 'bottom',
-                        horizontal: 'right',
-                    }}
-                    transformOrigin={{
-                        vertical: 'top',
-                        horizontal: 'right',
-                    }}
-                    PaperProps={{
-                        elevation: 3,
-                        sx: {
-                            bgcolor: '#f0f0f0',
-                            color: '#333',
-                            minWidth: '200px',
-                        },
-                    }}
-                >
-                    <ListSubheader sx={{ bgcolor: '#f0f0f0', fontWeight: 'bold', borderBottom: '1px solid #ccc', paddingLeft: '16px', fontSize: '16px' }}>
-                        Admin
-                    </ListSubheader>
-                    <MenuItem onClick={() => handleTransactionMenuClose('')} sx={{ paddingLeft: '24px', '&:hover': { backgroundColor: '#e0f7fa' }, fontSize: '14px' }}>
-                        Payment
-                    </MenuItem>
-                    <Divider />
-                    <ListSubheader sx={{ bgcolor: '#f0f0f0', fontWeight: 'bold', borderBottom: '1px solid #ccc', paddingLeft: '16px', fontSize: '16px' }}>
-                        Operator
-                    </ListSubheader>
-                    <MenuItem onClick={() => handleTransactionMenuClose('/cargo-outgoing')} sx={{ paddingLeft: '24px', '&:hover': { backgroundColor: '#e0f7fa' }, fontSize: '14px' }}>
-                        Cargo Outgoing
-                    </MenuItem>
-                    <MenuItem onClick={() => handleTransactionMenuClose('')} sx={{ paddingLeft: '24px', '&:hover': { backgroundColor: '#e0f7fa' }, fontSize: '14px' }}>
-                        Cargo Incoming
-                    </MenuItem>
-                </Menu>
 
                 <IconButton style={{ color: '#000000'}} onClick={handleMenuClick}>
                     <AccountCircle style={{ marginRight: '8px' }} />
