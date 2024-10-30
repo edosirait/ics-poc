@@ -41,7 +41,7 @@ const Sidebar: React.FC = () => {
                         ICS
                     </Typography>
                     <Typography variant="body2" sx={{ color: '#000000' }}>
-                        Integrate Cargo System
+                        Integrated Cargo System
                     </Typography>
                 </Box>
 
