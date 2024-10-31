@@ -27,7 +27,7 @@ const Login: React.FC<LoginProps> = ({ setUser }) => {
     };
 
     return (
-        <Box display="flex" flexDirection="column" minHeight="95vh" bgcolor="#f0f2f5">
+        <Box display="flex" flexDirection="column" minHeight="95vh" bgcolor="#d1d3d4">
             {/* left content */}
             <Box display="flex" flex={1}>
                 <Box
@@ -132,7 +132,7 @@ const Login: React.FC<LoginProps> = ({ setUser }) => {
                 width="100%"
             >
                 <Typography variant="body2" color="textSecondary">
-                    © 2024 Integrasi Aviasi Solusi. All rights reserved.
+                    © 2024 Injourney Aviation Services. All rights reserved.
                 </Typography>
             </Box>
         </Box>

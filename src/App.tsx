@@ -49,10 +49,10 @@ const App: React.FC = () => {
                         component="main"
                         sx={{
                             flexGrow: 1,
-                            width: isAuthenticated ? '70%' : '100%',
-                            bgcolor: '#f4f6f8',
+                            width: isAuthenticated ? '80%' : '100%',
+                            bgcolor: '#d1d3d4',
                             p: 3,
-                            marginLeft: isAuthenticated ? 0 : 0,
+                            minHeight: '100vh', // Pastikan ini ditambahkan
                         }}
                     >
                         <Routes>

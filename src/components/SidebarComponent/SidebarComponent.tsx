@@ -29,7 +29,7 @@ const Sidebar: React.FC = () => {
                 '& .MuiDrawer-paper': {
                     width: drawerWidth,
                     boxSizing: 'border-box',
-                    background: 'linear-gradient(180deg, #FFFFFF, #34495E)',
+                    background: '#1D2250', // Hapus tanda kurung tutup tambahan di sini
                     color: '#FFFFFF',
                     boxShadow: '5px 0px 20px rgba(0, 0, 0, 0.2)',
                 },
@@ -37,14 +37,13 @@ const Sidebar: React.FC = () => {
         >
             <Toolbar>
                 <Box sx={{ display: 'flex', flexDirection: 'column', marginBottom: 8}}>
-                    <Typography variant="h2" fontWeight="bold" sx={{ color: '#000000' }}>
+                    <Typography variant="h2" fontWeight="bold" sx={{ color: '#F0F0F0' }}>
                         ICS
                     </Typography>
-                    <Typography variant="body2" sx={{ color: '#000000' }}>
+                    <Typography variant="body2" sx={{ color: '#F0F0F0' }}>
                         Integrated Cargo System
                     </Typography>
                 </Box>
-
             </Toolbar>
             <Box sx={{ overflow: 'auto' }}>
                 <List>
@@ -53,8 +52,8 @@ const Sidebar: React.FC = () => {
                             key={item.text}
                             onClick={() => navigate(item.path)}
                             sx={{
-                                color: location.pathname === item.path ? '#000000' : '#000000',
-                                backgroundColor: location.pathname === item.path ? '#F0F0F0' : 'transparent',
+                                color: location.pathname === item.path ? '#F0F0F0' : '#F0F0F0',
+                                backgroundColor: location.pathname === item.path ? '#34495E' : 'transparent',
                                 borderRadius: '8px',
                                 margin: '5px',
                                 '&:hover': {
@@ -63,7 +62,7 @@ const Sidebar: React.FC = () => {
                                 },
                             }}
                         >
-                            <ListItemIcon sx={{ color: location.pathname === item.path ? '#000000' : '#000000' }}>
+                            <ListItemIcon sx={{ color: location.pathname === item.path ? '#F0F0F0' : '#F0F0F0' }}>
                                 {item.icon}
                             </ListItemIcon>
                             <ListItemText primary={item.text} />

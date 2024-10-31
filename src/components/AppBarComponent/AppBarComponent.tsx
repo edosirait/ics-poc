@@ -23,7 +23,7 @@ const AppBarComponent: React.FC<AppBarProps> = ({ user, handleLogout }) => {
             sx={{
                 flexShrink: 0,
                 boxSizing: 'border-box',
-                background: 'linear-gradient(180deg, #F0F0F0, #FFFFFF)',
+                background: '#d1d3d4',
                 color: '#FFFFFF',
                 boxShadow: '5px 0px 20px rgba(0, 0, 0, 0.2)',
             }}
